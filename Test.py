@@ -80,19 +80,19 @@ if __name__ == '__main__':
 
     # 7-3. ACCOUNT 'Withdraw' FAIL
     print("\n-----TEST#7-3. ACCOUNT WITHDRAW FAIL - EXCEEDED CASHBIN-----")
-    ATM.runATM(1, 135792468, 1357, 135248, 1234, 3, 15000, 0)
+    ATM.runATM(2, 135792468, 1357, 135248, 1234, 3, 15000, 0)
 
     # 8-1. ACCOUNT 'Transfer' SUCCESS
     print("\n---------TEST#8-1. ACCOUNT TRANSFER SUCCESS---------")
-    ATM.runATM(1, 123456789, 1234, 123123, 1234, 4, 60, 135248)
+    ATM.runATM(2, 123456789, 1234, 123123, 1234, 4, 60, 135248)
 
     # 8-2. ACCOUNT 'Transfer' FAIL
     print("\n----TEST#8-2. ACCOUNT TRANSFER FAIL - EXCEEDED LIMIT----")
-    ATM.runATM(1, 123456789, 1234, 123123, 1234, 4, 600, 135248)
+    ATM.runATM(2, 123456789, 1234, 123123, 1234, 4, 600, 135248)
 
     # 8-3. ACCOUNT 'Transfer' FAIL
     print("\n---TEST#8-3. ACCOUNT TRANSFER FAIL - ACCOUNT DOESN'T EXIST---")
-    ATM.runATM(1, 123456789, 1234, 123123, 1234, 4, 600, 111111)
+    ATM.runATM(2, 123456789, 1234, 123123, 1234, 4, 600, 111111)
 
     # 9. Not registered Card
     print("\n------TEST#9. FAIL - CARD NOT REGISTERED------")
