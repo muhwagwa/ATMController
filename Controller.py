@@ -3,28 +3,27 @@ class Controller:
         self.cashBin = cashbin
         self.bank = bank
         # The card ATM is processing right now
-        self.card = 0
+        self.cardNumber = 0
         # The account ATM is processing right now
         self.account = 0
 
     def insertCard(self, cardNumber):
-        card = self.bank.getCard(cardNumber)
         # Card Doesn't Exist
-        if card == False:
+        if self.bank.checkCard(cardNumber) == False:
             print("This card is not registered.")
             return False
         # Card Exists
         else:
-            self.card = card
+            self.cardNumber = cardNumber
             print("Enter Your PIN Number")
             return True
             
     def checkPIN(self, pin):
         # PIN match
-        if pin == self.card.getPin():
-            print("WELCOME! Select Your Account!")
+        if self.bank.checkPin(self.cardNumber, pin):
+            print("Verification Success! Select Your Account!")
             # print account options
-            for account in self.card.getAccountList():
+            for account in self.bank.getCard(self.cardNumber).getAccountList():
                 print("> " + str(account))
             return True
         # PIN doesn't match
@@ -34,9 +33,9 @@ class Controller:
 
     def selectAccount(self, accountNumber):
         # Account Exists
-        if accountNumber in self.card.getAccountList():
+        if accountNumber in self.bank.getCard(self.cardNumber).getAccountList():
             self.account = self.bank.getAccount(accountNumber)
-            print("Choose Your Option Number\n1. Check Balance\n2.Deposit\n3.Withdraw")
+            print("Choose Your Option Number\n>1. Check Balance\n>2. Deposit\n>3. Withdraw")
             return True
         # Account Doesn't Exist
         else:
@@ -44,12 +43,12 @@ class Controller:
             return False
 
     def seeBalance(self):
-        print("Your account balance : " + str(self.account.getBalance()))
+        print("***Your account balance : " + str(self.account.getBalance()))
 
     def deposit(self, amount):
         balanceBefore = self.account.getBalance()
         self.account.deposit(amount)
-        print(">>DEPOSIT COMPLETE<<\n  Before: " + str(balanceBefore) + "   Deposit Amount: " + str(amount) + "   After: " + str(self.account.getBalance()))
+        print("***DEPOSIT COMPLETE***\nBefore: " + str(balanceBefore) + "   Deposit Amount: " + str(amount) + "   After: " + str(self.account.getBalance()))
 
     def withdraw(self, amount):
         balanceBefore = self.account.getBalance()
@@ -63,7 +62,7 @@ class Controller:
             return False
         # Withdraw SUCCESS
         else:
-            print(">>WITHDRAW COMPLETE<<\n  Before: " + str(balanceBefore) + "   Deposit Amount: " + str(amount) + "   After: " + str(self.account.getBalance()))
+            print("***WITHDRAW COMPLETE***\nBefore: " + str(balanceBefore) + "   Deposit Amount: " + str(amount) + "   After: " + str(self.account.getBalance()))
             return True
 
     def runATM(self, cardNumber, PIN, accountNumber, option, amount):

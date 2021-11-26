@@ -9,12 +9,18 @@ class Bank:
     def addAccount(self, account):
         self.account.append(account)
 
-    # Find Card with Card Number / Return False if doesn't exist
+    # Check Card Existence with Card Number
+    def checkCard(self, cardNumber):
+        for card in self.card:
+            if cardNumber == card.getCardNumber():
+                return True
+        return False
+
+    # Find Card with Card Number
     def getCard(self, cardNumber):
         for card in self.card:
             if cardNumber == card.getCardNumber():
                 return card
-        return False
 
     # Find Account with Account Number / Return False if doesn't exist
     def getAccount(self, accountNumber):
@@ -22,3 +28,10 @@ class Bank:
             if accountNumber == account.getAccountNumber():
                 return account
         return False
+
+    def checkPin(self, cardNumber, inputPin):
+        card = self.getCard(cardNumber)
+        if card.checkPin(inputPin):
+            return True
+        else:
+            return False
