@@ -18,6 +18,12 @@ class Account:
         else:
             return False
 
+    def checkPassword(self, inputPassword):
+        if self.password == inputPassword:
+            return True
+        else:
+            return False
+
     def getUserName(self):
         return self.username
 
