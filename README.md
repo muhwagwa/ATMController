@@ -121,7 +121,7 @@ Simply run the Test.py file with python.
 ```
 python Test.py
 ```
-Test will start like this. 
+Test will start like this
 ```
 ------------------------TEST STARTS---------------------------
 
@@ -130,6 +130,15 @@ BR ATM Says Hi! Insert Your Card.
 > Insert Card / Enter Account Number
 ...
 ```
+and end like this.
+
+```
+> 3. Withdraw
+> 4. Transfer
+Invalid Option
+------------------------TEST END---------------------------
+```
+
 There are total 14 test cases.
 - TEST 1 : [SUCCESS] Insert a Card > See Balance
 - TEST 2 : [SUCCESS] Insert a Card > Deposit
