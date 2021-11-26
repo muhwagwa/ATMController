@@ -1,6 +1,3 @@
-import Card
-import Account
-
 class Bank:
     def __init__(self):
         self.card = []
