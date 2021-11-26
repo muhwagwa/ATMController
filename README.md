@@ -5,10 +5,10 @@ This is a simple bank ATM controller in a world of 1 dollar bills (no cents).
 <img width="618" alt="Screen Shot 2021-11-26 at 7 09 59 PM" src="https://user-images.githubusercontent.com/77218372/143564097-cbd81dca-9bfa-4bd2-80f9-b4e02e4ffa6c.png">
 
 There are total 5 classes in this ATMController : **Controller, Bank, Card, Account and CashBin.** 
-- Card and Account : Holds information about each card and account. These are stored inside the Bank.
-- Bank : Holds the card and account objects in the bank. 
-- Controller : The controller only holds the card number and account number that it's dealing at each operation. Each time the controller needs more information about the card or account (username, balance, etc.), it needs to send request to the bank module. To check whether the pin number (for card) or password (for account) is correct, it needs to send a request to the bank module and get the answer not in the 'pin' or 'password' format, but only in 'True' or 'False' format.
-- Cashbin : This class holds information about how much cash is in cashbin right now.
+- **Card and Account** : Holds information about each card and account. These are stored inside the Bank.
+- **Bank** : Holds the card and account objects in the bank. 
+- **Controller** : The controller only holds the card number and account number that it's dealing at each operation. Each time the controller needs more information about the card or account (username, balance, etc.), it needs to send request to the bank module. To check whether the pin number (for card) or password (for account) is correct, it needs to send a request to the bank module and get the answer not in the 'pin' or 'password' format, but only in 'True' or 'False' format.
+- **Cashbin** : This class holds information about how much cash is in cashbin right now.
 
 ## Features
 
