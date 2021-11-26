@@ -121,7 +121,40 @@ Simply run the Test.py file with python.
 ```
 python Test.py
 ```
-Note that this ATMController was implemented with python 3.9.7.
+Test will start like this. 
+```
+------------------------TEST STARTS---------------------------
+
+---------TEST#1. CARD SEE BALANCE SUCCESS---------
+BR ATM Says Hi! Insert Your Card.
+> Insert Card / Enter Account Number
+...
+```
+There are total 14 test cases.
+- TEST 1 : [SUCCESS] Insert a Card > See Balance
+- TEST 2 : [SUCCESS] Insert a Card > Deposit
+- TEST 3-1 : [SUCCESS] Insert a Card > Withdraw
+- TEST 3-2 : [FAIL] Insert a Card > Withdraw > Exceed account limit
+- TEST 3-3 : [FAIL] Insert a Card > Withdraw > Not enough cash in cashbin
+- TEST 4-1 : [SUCCESS] Insert a Card > Transfer
+- TEST 4-2 : [FAIL] Insert a Card > Transfer > Exceed account limit
+- TEST 4-3 : [FAIL] Insert a Card > Transfer > Transfer account doesn't exist
+- TEST 5 : [SUCCESS] Enter Account Number > See Balance
+- TEST 6 : [SUCCESS] Enter Account Number > Deposit
+- TEST 7-1 : [SUCCESS] Enter Account Number > Withdraw
+- TEST 7-2 : [FAIL] Enter Account Number > Withdraw > Exceed account limit
+- TEST 7-3 : [FAIL] Enter Account Number > Withdraw > Not enough cash in cashbin
+- TEST 8-1 : [SUCCESS] Enter Account Number > Transfer
+- TEST 8-2 : [FAIL] Enter Account Number > Transfer > Exceed account limit
+- TEST 8-3 : [FAIL] Enter Account Number > Transfer > Transfer account doesn't exist
+- TEST 9 : [FAIL] Insert a Card > Card number doesn't exist
+- TEST 10 : [FAIL] Enter Account Number > Account number doesn't exist
+- TEST 11-1 : [FAIL] Insert a Card > Wrong PIN number
+- TEST 11-2 : [FAIL] Enter Account Number > Wrong account password
+- TEST 12 : [FAIL] Insert a Card > Account number doesn't exist
+- TEST 13 : [FAIL] Invalid option1
+- TEST 14 : [FAIL] Invalid option2
+
 
 ## Files and Directories
 
